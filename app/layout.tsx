@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Mona_Sans({
+const mona_san = Mona_Sans({
   variable: "--font-mona-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export const metadata: Metadata = {
+  title: "Intellio",
+  description: "Where Intelligence Meets Opportunity.",
+};
 
 export default function RootLayout({
   children,
@@ -18,9 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${mona_san.className} antialiased`}
       >
         {children}
       </body>
